@@ -42,6 +42,8 @@ public class MainActivity extends Activity {
         mapView = new MapView(this.getApplicationContext());
         gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        gMap.setMyLocationEnabled(true);
+        gMap.setBuildingsEnabled(true);
         gMap.setTrafficEnabled(Traffic);
 
     }
