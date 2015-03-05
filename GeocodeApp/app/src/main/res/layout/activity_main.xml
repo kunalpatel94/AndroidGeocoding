@@ -1,28 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<!--
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/map"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name="com.google.android.gms.maps.MapFragment"/>
 
+-->
 
 
-<!--
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/btn_show"
+        android:id="@+id/btn_terrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terrain"
+        android:onClick="changeTerrain"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"/>
+
+
+    <Button
+        android:id="@+id/btn_hybrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hybrid"
+        android:onClick="changeHybrid"
+        android:layout_toLeftOf="@id/btn_terrain"/>
+
+
+    <Button
+        android:id="@+id/btn_satellite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/satellite"
+        android:onClick="changeSatellite"
+        android:layout_toLeftOf="@id/btn_hybrid"/>
+
+
+    <Button
+        android:id="@+id/btn_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/normal"
+        android:onClick="changeNormal"
+        android:layout_toLeftOf="@id/btn_satellite"/>
+
+    <Button
+        android:id="@+id/btn_find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/find"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+        android:onClick="getLocation"
+        android:layout_toLeftOf="@id/btn_normal"/>
+
 
     <EditText
         android:id="@+id/et_place"
@@ -30,13 +70,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint"
         android:inputType="text"
-        android:layout_toLeftOf="@id/btn_show" />
+        android:layout_toLeftOf="@id/btn_find" />
 
-    <fragment
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/et_place"
-        class="com.google.android.gms.maps.SupportMapFragment" />
+        android:layout_below="@id/btn_find"
+        android:name="com.google.android.gms.maps.MapFragment"/>
 
-</RelativeLayout>-->
+
+</RelativeLayout>
