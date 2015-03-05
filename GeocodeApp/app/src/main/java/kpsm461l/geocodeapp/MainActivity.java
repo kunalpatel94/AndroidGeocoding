@@ -11,12 +11,16 @@ import android.content.Intent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.google.android.*;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -27,6 +31,9 @@ public class MainActivity extends Activity {
     double latitude;
     double longitude;
     List<Address> geocodeMatches = null;
+    List<Address> History = new ArrayList<Address>();
+    int mapType = 0;
+    boolean Traffic = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +42,7 @@ public class MainActivity extends Activity {
         mapView = new MapView(this.getApplicationContext());
         gMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
         gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        gMap.setTrafficEnabled(Traffic);
 
     }
 
@@ -82,6 +90,8 @@ public class MainActivity extends Activity {
         if (!geocodeMatches.isEmpty()) {
             latitude = geocodeMatches.get(0).getLatitude();
             longitude = geocodeMatches.get(0).getLongitude();
+            History.add(geocodeMatches.get(0));
+            Toast.makeText(this, geocodeMatches.get(0).getAddressLine(0), Toast.LENGTH_SHORT).show();
         }
 
         LatLng LatLong = new LatLng(latitude, longitude);
@@ -89,24 +99,46 @@ public class MainActivity extends Activity {
 
     }
 
+    public void getHistory(View view) {
 
-    public void changeNormal(View view) {
-        gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-
-    }
-
-    public void changeSatellite(View view) {
-        gMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-
-    }
-
-    public void changeHybrid(View view) {
-        gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        for (int i = 0; i < History.size(); i += 1) {
+            gMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(History.get(i).getLatitude(), History.get(i).getLongitude()))
+                    .title(History.get(i).getAddressLine(0)));
+        }
 
     }
+
+
 
     public void changeTerrain(View view) {
-        gMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-
+        if(mapType == 0){
+            gMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            Toast.makeText(this, "Satellite", Toast.LENGTH_SHORT).show();
+        }else if(mapType == 1) {
+            gMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            Toast.makeText(this, "Hybrid", Toast.LENGTH_SHORT).show();
+        } else if(mapType == 2) {
+            gMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
+            Toast.makeText(this, "Terrain", Toast.LENGTH_SHORT).show();
+        } else if(mapType == 3) {
+            gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            Toast.makeText(this, "Normal", Toast.LENGTH_SHORT).show();
+        }
+        mapType =(mapType + 1)%4;
     }
+
+    public void changeTraffic(View view) {
+        if(Traffic){
+            gMap.setTrafficEnabled(false);
+            Toast.makeText(this, "Hide Traffic", Toast.LENGTH_SHORT).show();
+        }else {
+            gMap.setTrafficEnabled(true);
+            Toast.makeText(this, "Show Traffic", Toast.LENGTH_SHORT).show();
+        }
+        Traffic = !Traffic;
+    }
+
+
+
 }

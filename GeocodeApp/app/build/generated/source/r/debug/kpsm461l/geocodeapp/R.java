@@ -1704,18 +1704,17 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0a0042;
         public static final int action_mode_bar_stub=0x7f0a0041;
         public static final int action_mode_close_button=0x7f0a0034;
-        public static final int action_settings=0x7f0a005a;
+        public static final int action_settings=0x7f0a0059;
         public static final int activity_chooser_view_content=0x7f0a0035;
         public static final int adjust_height=0x7f0a0016;
         public static final int adjust_width=0x7f0a0017;
         public static final int always=0x7f0a001b;
         public static final int beginning=0x7f0a0013;
         public static final int book_now=0x7f0a002b;
-        public static final int btn_find=0x7f0a0057;
-        public static final int btn_hybrid=0x7f0a0054;
-        public static final int btn_normal=0x7f0a0056;
-        public static final int btn_satellite=0x7f0a0055;
-        public static final int btn_terrain=0x7f0a0053;
+        public static final int btn_find=0x7f0a0056;
+        public static final int btn_his=0x7f0a0055;
+        public static final int btn_terrain=0x7f0a0054;
+        public static final int btn_traffic=0x7f0a0053;
         public static final int buyButton=0x7f0a0028;
         public static final int buy_now=0x7f0a002c;
         public static final int buy_with_google=0x7f0a002d;
@@ -1730,7 +1729,7 @@ containing a value of this type.
         public static final int dropdown=0x7f0a0021;
         public static final int edit_query=0x7f0a0047;
         public static final int end=0x7f0a0014;
-        public static final int et_place=0x7f0a0058;
+        public static final int et_place=0x7f0a0057;
         public static final int expand_activities_button=0x7f0a0036;
         public static final int expanded_menu=0x7f0a003c;
         public static final int grayscale=0x7f0a0030;
@@ -1744,7 +1743,7 @@ containing a value of this type.
         public static final int image=0x7f0a0037;
         public static final int listMode=0x7f0a0009;
         public static final int list_item=0x7f0a0039;
-        public static final int map=0x7f0a0059;
+        public static final int map=0x7f0a0058;
         public static final int match_parent=0x7f0a002a;
         public static final int middle=0x7f0a0015;
         public static final int monochrome=0x7f0a0031;
@@ -1879,13 +1878,12 @@ containing a value of this type.
         public static final int hello_blank_fragment=0x7f0c0033;
         public static final int hello_world=0x7f0c0034;
         public static final int hint=0x7f0c0035;
-        public static final int hybrid=0x7f0c0036;
-        public static final int normal=0x7f0c0037;
-        public static final int satellite=0x7f0c0038;
-        public static final int store_picture_message=0x7f0c0039;
-        public static final int store_picture_title=0x7f0c003a;
-        public static final int terrain=0x7f0c003b;
-        public static final int wallet_buy_button_place_holder=0x7f0c003c;
+        public static final int history=0x7f0c0036;
+        public static final int store_picture_message=0x7f0c0037;
+        public static final int store_picture_title=0x7f0c0038;
+        public static final int terrain=0x7f0c0039;
+        public static final int traffic=0x7f0c003a;
+        public static final int wallet_buy_button_place_holder=0x7f0c003b;
     }
     public static final class style {
         /**  Customize your theme here. 
