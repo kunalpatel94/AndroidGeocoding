@@ -1,6 +1,7 @@
 package kpsm461l.geocodeapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,6 +9,7 @@ import android.view.MenuItem;
 import android.location.*;
 import android.content.Intent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import com.google.android.*;
 import com.google.android.gms.maps.MapView;
@@ -61,6 +63,12 @@ public class MainActivity extends Activity {
     public void getLocation(View view) {
         EditText edittext = (EditText) findViewById(R.id.et_place);
         String place = edittext.getText().toString();
+
+        InputMethodManager imm = (InputMethodManager)getSystemService(
+                Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(edittext.getWindowToken(), 0);
+
+
 
         try {
             geocodeMatches =

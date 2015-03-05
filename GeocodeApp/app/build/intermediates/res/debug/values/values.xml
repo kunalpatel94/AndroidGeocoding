@@ -244,11 +244,20 @@
     <string name="decline">Decline</string>
     <!-- From: file:/C:/Users/Kunal/AndroidStudioProjects/GeocodeApp/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="find">Find</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
+    <string name="hint">Enter a place</string>
+    <string name="hybrid">Hybrid</string>
+    <string name="normal">Normal</string>
+    <string name="satellite">Satellite</string>
     <!-- From: file:/C:/Users/Kunal/AndroidStudioProjects/GeocodeApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/admob_strings.xml -->
     <eat-comment/>
     <string name="store_picture_message">"Allow Ad to store image in Picture gallery?"</string>
     <string name="store_picture_title">Save image</string>
+    <!-- From: file:/C:/Users/Kunal/AndroidStudioProjects/GeocodeApp/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="terrain">Terrain</string>
     <!-- From: file:/C:/Users/Kunal/AndroidStudioProjects/GeocodeApp/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/res/values/wallet_strings.xml -->
     <eat-comment/>
     <string name="wallet_buy_button_place_holder" translation_description="Text on a button that allows a user to make a payment with Google Wallet [CHAR LIMIT=30]">Buy with Google</string>
